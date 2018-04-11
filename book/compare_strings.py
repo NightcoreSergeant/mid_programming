@@ -1,16 +1,13 @@
 def compare(a, b):
-    x = 0
     if len(a) != len(b):
         return False
     
     for i in range(len(a)):
-        if (a[i] == "?" or b[i] == "?") or (a[i] == b[i]):
-            x += 1
-        if x == len(a):
-            return True
-    return False
+        if a[i] != "?" and b[i] != "?" and a[i] != b[i]:
+            return False
+    return True
 
 a = "abc?fg"
-b = "abmafg"
+b = "ab?afg"
 
 print(compare(a,b))
